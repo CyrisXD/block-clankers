@@ -9,7 +9,7 @@ Default source: [UnsafeLabs/Bounty-Hunters `clankers.json`](https://github.com/U
 ## Quick start - fork & go
 
 1. **Fork this repo.**
-2. Create a Personal Access Token (classic) with scopes:
+2. Create a [Personal Access Token](https://github.com/settings/tokens) (classic) with scopes:
    - `user` - personal-account blocks
    - `admin:org` - org blocks
    - `read:org` - auto-discover orgs you admin
