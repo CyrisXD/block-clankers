@@ -10,7 +10,7 @@
 name: Block Clankers
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "00 12 * * *"
   workflow_dispatch:
     inputs:
       dry-run:
