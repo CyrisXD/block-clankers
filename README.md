@@ -138,6 +138,14 @@ Override in a workflow:
 
 &nbsp;
 
+## Special thanks
+
+A special thanks to Coolify Developer [@heyandras](https://x.com/heyandras/status/2054512710017298463) and [@shadowarcanist](https://x.com/shadowarcanist) for creating and maintaining the source list. Check out their [Clankers Leaderboard](https://clankers-leaderboard.pages.dev/)
+
+
+
+## Help me turn coffee into code
+
 [!["Buy Me A Coffee"](https://buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://buymeacoffee.com/firmvxozh)
 
 
