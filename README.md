@@ -1,3 +1,7 @@
+
+
+![Block Clankers](https://i.imgur.com/idhWdxC.jpeg)
+
 # Block Clankers
 
 Auto-block known spam bot accounts from your **personal GitHub account** and/or **every org you admin**. Pulls a community-maintained list and syncs your block lists on a schedule.
