@@ -36,7 +36,7 @@ If you'd rather not fork, reference it from any repo's workflow:
 ```yaml
 name: Block Clankers
 on:
-  schedule: [{ cron: "*/30 * * * *" }]
+  schedule: [{ cron: "00 12 * * *" }] # Run once daily
   workflow_dispatch:
 
 jobs:
