@@ -94,7 +94,7 @@ Steady-state runs do 1 LIST per target and 0 writes. Idempotent.
 
 ## Run results
 
-![Gihub Action Running](https://i.imgur.com/4bRF6MC.png)
+![Gihub Action Running](https://i.imgur.com/moJWJtU.png)
 
 ## Being gentle on the GitHub API
 
