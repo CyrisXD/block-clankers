@@ -18,7 +18,7 @@ set -euo pipefail
 
 : "${GH_TOKEN:?GH_TOKEN is required}"
 : "${SOURCE_URL:?SOURCE_URL is required}"
-TARGETS="${TARGETS:-@auto}"
+TARGETS="${TARGETS:-@me}"
 DRY_RUN="${DRY_RUN:-false}"
 UNBLOCK_REMOVED="${UNBLOCK_REMOVED:-false}"
 
@@ -43,7 +43,7 @@ wanted="$tmpdir/wanted.txt"
 
 summary="${GITHUB_STEP_SUMMARY:-/dev/null}"
 
-log() { printf '%s %s\n' "$(date -u +%H:%M:%SZ)" "$*"; }
+log() { printf '%s %s\n' "$(date -u +%H:%M:%SZ)" "$*" >&2; }
 
 sleep_secs() { awk -v s="$1" 'BEGIN { system(sprintf("sleep %.3f", s)) }'; }
 sleep_ms()   { awk -v ms="$1" 'BEGIN { system(sprintf("sleep %.3f", ms/1000)) }'; }

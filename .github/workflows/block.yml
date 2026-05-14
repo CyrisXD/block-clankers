@@ -28,5 +28,5 @@ jobs:
       - uses: ./
         with:
           token: ${{ secrets.BLOCKER_TOKEN }}
-          targets: "@auto"
+          targets: "@me"
           dry-run: ${{ inputs.dry-run || 'false' }}

@@ -10,9 +10,9 @@ Default source: [UnsafeLabs/Bounty-Hunters `clankers.json`](https://github.com/U
 
 1. **Fork this repo.**
 2. Create a [Personal Access Token](https://github.com/settings/tokens) (classic) with scopes:
-   - `user` - personal-account blocks
-   - `admin:org` - org blocks
-   - `read:org` - auto-discover orgs you admin
+   - `user` - personal-account blocks (required for the default `@me` target)
+   - `admin:org` - only if you also want to sync orgs
+   - `read:org` - only if you want `@auto` to discover orgs you admin
 
    (Fine-grained tokens work too - grant the equivalent permissions.)
 3. In the fork: **Settings → Secrets and variables → Actions → New repository secret**
@@ -21,7 +21,7 @@ Default source: [UnsafeLabs/Bounty-Hunters `clankers.json`](https://github.com/U
 4. Go to the **Actions** tab, enable workflows for the fork.
 5. Click **Block Clankers → Run workflow** for a first sync, or wait for the schedule.
 
-The bundled workflow at [.github/workflows/block.yml](.github/workflows/block.yml) calls the action with `targets: "@auto"` - personal account **plus** every org you admin.
+The bundled workflow at [.github/workflows/block.yml](.github/workflows/block.yml) calls the action with `targets: "@me"` — syncing only your personal account by default. To also cover orgs, change it to `"@auto"` (personal + all admin orgs) or list them explicitly, e.g. `"@me,my-org-1,my-org-2"`.
 
 ---
 
@@ -42,7 +42,7 @@ jobs:
       - uses: cyrisxd/block-clankers@v1
         with:
           token: ${{ secrets.BLOCKER_TOKEN }}
-          targets: "@auto"
+          targets: "@me"
 ```
 
 ---
@@ -52,7 +52,7 @@ jobs:
 | Input | Required | Default | Description |
 |---|---|---|---|
 | `token` | yes | - | PAT with scopes matching your targets (`user`, `admin:org`, `read:org`). |
-| `targets` | no | `@auto` | What to sync. See **Targets** below. |
+| `targets` | no | `@me` | What to sync. See **Targets** below. |
 | `source-url` | no | UnsafeLabs `clankers.json` | URL to a JSON array of `{ "username": "..." }` objects. |
 | `dry-run` | no | `false` | Log only, no API writes. |
 | `unblock-removed` | no | `false` | Unblock users no longer in source list. Off by default. |
@@ -69,8 +69,8 @@ A newline- or comma-separated list. Tokens:
 
 Examples:
 ```yaml
-targets: "@me"                            # personal account only
-targets: "@auto"                          # everything (default)
+targets: "@me"                            # personal account only (default)
+targets: "@auto"                          # personal + every org you admin
 targets: "@me,my-org-1,my-org-2"          # personal + two explicit orgs
 ```
 

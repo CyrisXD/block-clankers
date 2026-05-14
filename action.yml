@@ -19,9 +19,9 @@ inputs:
         @me     - your personal account (/user/blocks)
         @auto   - @me plus every org where you are an admin
         <name>  - a specific org (/orgs/<name>/blocks)
-      Default: @auto
+      Default: @me
     required: false
-    default: "@auto"
+    default: "@me"
   source-url:
     description: URL to a JSON array of objects with a `username` field.
     required: false
